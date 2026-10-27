@@ -61,7 +61,7 @@ def plot_mesh(mesh: Mesh, savefile):
 def plot_function_on_mesh(mesh: Mesh, z, savefile, log_scale=False, title=None):
     fig, ax = plt.subplots()
     if log_scale:
-        z = np.log(z + 1e-10)
+        z = np.log(z + 1e-16)
     tri = Triangulation(x=mesh.coords[:, 0], y=mesh.coords[:, 1], triangles=mesh.triangles)
     ax.set_aspect("equal")
     if title is not None:
